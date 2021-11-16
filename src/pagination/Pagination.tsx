@@ -13,8 +13,8 @@ const Pagination = (props: IPaginationProps) => (
   <div className="text-sm flex justify-between">
     {props.previous && (
       <div>
-        <Link href={convertUrlToLinkHref(props.previous)} as={props.previous}>
-          <a>← Newer Posts</a>
+        <Link href="/mywork">
+          <a>← Newer Work</a>
         </Link>
       </div>
     )}
@@ -22,7 +22,7 @@ const Pagination = (props: IPaginationProps) => (
     {props.next && (
       <div className="text-right ml-auto">
         <Link href={convertUrlToLinkHref(props.next)} as={props.next}>
-          <a>Older Posts →</a>
+          <a>More Work →</a>
         </Link>
       </div>
     )}

@@ -24,16 +24,33 @@ const Main = (props: IMainProps) => (
           <Navbar>
             <li className="mr-6">
               <Link href="/">
-                <a>Home</a>
+                <a>About Me</a>
               </Link>
             </li>
             <li className="mr-6">
-              <Link href="/about/">
-                <a>About</a>
+              <Link href="/mywork/">
+                <a>My Work</a>
               </Link>
             </li>
             <li className="mr-6">
-              <a href="https://github.com/ixartz/Next-js-Blog-Boilerplate">GitHub</a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/Rahat-ch">
+                GitHub
+              </a>
+            </li>
+            <li className="mr-6">
+              <a target="_blank" rel="noreferrer" href="https://www.twitch.tv/rahatcodes">
+                Twitch
+              </a>
+            </li>
+            <li className="mr-6">
+              <a target="_blank" rel="noreferrer" href="https://mirror.xyz/rahat.eth">
+                Blog
+              </a>
+            </li>
+            <li className="mr-6">
+              <a target="_blank" rel="noreferrer" href="https://twitter.com/Rahatcodes">
+                Twitter
+              </a>
             </li>
           </Navbar>
         </div>

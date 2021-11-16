@@ -1,41 +1,30 @@
 import React from 'react';
 
-import { GetStaticProps } from 'next';
+import Link from 'next/link';
 
-import { BlogGallery, IBlogGalleryProps } from '../blog/BlogGallery';
+import { Content } from '../content/Content';
 import { Meta } from '../layout/Meta';
-import { IPaginationProps } from '../pagination/Pagination';
 import { Main } from '../templates/Main';
-import { Config } from '../utils/Config';
-import { getAllPosts } from '../utils/Content';
 
-const Index = (props: IBlogGalleryProps) => (
-  <Main
-    meta={(
-      <Meta
-        title="Made with Next.js, TypeScript, ESLint, Prettier, PostCSS, Tailwind CSS"
-        description={Config.description}
-      />
-    )}
-  >
-    <BlogGallery posts={props.posts} pagination={props.pagination} />
+const About = () => (
+  <Main meta={<Meta title="Rahat.dev" description="rahat.eth" />}>
+    <Content>
+      <p>
+        Rahat is a hip hop artist turned web developer, indie hacker, and web3 enthusiast.
+        Rahat&#39;s passions include advocating for mental health in tech, music, gaming, and
+        mentoring new developers.
+      </p>
+      <p>
+        For the latest projects, talks, and workshops check out
+        {' '}
+        <Link href="/about/">
+          <a>My Work</a>
+        </Link>
+        {' '}
+        If you would like Rahat to speak at your event please contact via Twitter!
+      </p>
+    </Content>
   </Main>
 );
 
-export const getStaticProps: GetStaticProps<IBlogGalleryProps> = async () => {
-  const posts = getAllPosts(['title', 'date', 'slug']);
-  const pagination: IPaginationProps = {};
-
-  if (posts.length > Config.pagination_size) {
-    pagination.next = '/page2';
-  }
-
-  return {
-    props: {
-      posts: posts.slice(0, Config.pagination_size),
-      pagination,
-    },
-  };
-};
-
-export default Index;
+export default About;
