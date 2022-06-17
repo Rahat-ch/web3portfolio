@@ -12,12 +12,12 @@ const About = () => (
       <p>
         Rahat is a hip hop artist turned web developer, indie hacker, and web3 enthusiast.
         Rahat&#39;s passions include advocating for mental health in tech, music, gaming, and
-        mentoring new developers.
+        mentoring new developers. He currently works as a Developer Advocate for Polygon
       </p>
       <p>
         For the latest projects, talks, and workshops check out
         {' '}
-        <Link href="/about/">
+        <Link href="/mywork/">
           <a>My Work</a>
         </Link>
         {' '}

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { format } from 'date-fns';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import ReactPlayer from 'react-player';
 
 import { Content } from '../../content/Content';
 import { Meta } from '../../layout/Meta';
@@ -20,33 +21,40 @@ type IPostProps = {
   modified_date: string;
   image: string;
   content: string;
+  video?: string;
 };
 
-const DisplayPost = (props: IPostProps) => (
-  <Main
-    meta={(
-      <Meta
-        title={props.title}
-        description={props.description}
-        post={{
-          image: props.image,
-          date: props.date,
-          modified_date: props.modified_date,
-        }}
-      />
-    )}
-  >
-    <h1 className="text-center font-bold text-3xl text-gray-900">{props.title}</h1>
-    <div className="text-center text-sm mb-8">{format(new Date(props.date), 'LLLL d, yyyy')}</div>
+const DisplayPost = (props: IPostProps) => {
+  console.log({ props });
+  return (
+    <Main
+      meta={(
+        <Meta
+          title={props.title}
+          description={props.description}
+          post={{
+            image: props.image,
+            date: props.date,
+            modified_date: props.modified_date,
+          }}
+        />
+      )}
+    >
+      <h1 className="text-center font-bold text-3xl text-gray-900">{props.title}</h1>
+      <div className="text-center text-sm mb-8">{format(new Date(props.date), 'LLLL d, yyyy')}</div>
 
-    <Content>
-      <div
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: props.content }}
-      />
-    </Content>
-  </Main>
-);
+      <Content>
+        <div
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: props.content }}
+        />
+        <div className="player-wrapper">
+          <ReactPlayer className="react-player" url={props.video} width="100%" height="100%" />
+        </div>
+      </Content>
+    </Main>
+  );
+};
 
 export const getStaticPaths: GetStaticPaths<IPostUrl> = async () => {
   const posts = getAllPosts(['slug']);
@@ -70,6 +78,7 @@ export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({ par
     'image',
     'content',
     'slug',
+    'video',
   ]);
   const content = await markdownToHtml(post.content || '');
 
@@ -81,6 +90,7 @@ export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({ par
       modified_date: post.modified_date,
       image: post.image,
       content,
+      video: post.video || '',
     },
   };
 };

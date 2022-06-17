@@ -38,11 +38,6 @@ const Main = (props: IMainProps) => (
               </a>
             </li>
             <li className="mr-6">
-              <a target="_blank" rel="noreferrer" href="https://www.twitch.tv/rahatcodes">
-                Twitch
-              </a>
-            </li>
-            <li className="mr-6">
               <a target="_blank" rel="noreferrer" href="https://mirror.xyz/rahat.eth">
                 Blog
               </a>
