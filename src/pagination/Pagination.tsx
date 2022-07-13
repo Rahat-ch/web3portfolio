@@ -13,7 +13,7 @@ const Pagination = (props: IPaginationProps) => (
   <div className="text-sm flex justify-between">
     {props.previous && (
       <div>
-        <Link href="/mywork">
+        <Link href="/works">
           <a>← Newer Work</a>
         </Link>
       </div>

@@ -28,7 +28,7 @@ const Main = (props: IMainProps) => (
               </Link>
             </li>
             <li className="mr-6">
-              <Link href="/mywork/">
+              <Link href="/works/">
                 <a>My Work</a>
               </Link>
             </li>

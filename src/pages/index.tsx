@@ -17,7 +17,7 @@ const About = () => (
       <p>
         For the latest projects, talks, and workshops check out
         {' '}
-        <Link href="/mywork/">
+        <Link href="/works/">
           <a>My Work</a>
         </Link>
         {' '}
