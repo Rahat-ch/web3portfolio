@@ -4,7 +4,7 @@ description: Hack FS 2022 Workshop
 date: '2022-07-13'
 modified_date: '2022-07-13'
 image: /assets/images/posts/rahatcodes.png
-# video: 
+video: https://youtu.be/M1sHv7R0-b8 
 ---
 
 This is a workshop given during Hack FS 2022. In this workshop we talk about token gating static JSON data hosted through Web3.storage for building an exclusive access blog. 
